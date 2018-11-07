@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- froala -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/1.0.2/css/froala_blocks.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!--  -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+      <script src="menu.js"></script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light static-top" style="background-color:#007580;">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="color:white;"><b id="keyword" >맘스터치</b></a>
+        <a class="navbar-brand" href="tel:041-545-9294" style="color:white;"><b id="keyword" >Tel : 041-545-9294</b></a>
+      </div>
+    </nav>
+
+
+    <!-- Masthead -->
+    <header class="masthead text-lg-left" style="background-image: None; padding: 2rem 0;">
+      <div class="container" id="container">
+          <div class="container">
+          <!-- 특이사항 -->
+          <!-- 특이사항 -->
+          <!-- 특이사항 -->
+        <div id="etc">
+          >> 15,000원 이상 주문 시 배달가능<br>
+          >> 버거메뉴에 1900원 추가 시 세트메뉴로 변경 가능<br>
+        </div>
+
+        <div class="row">
+                <div class="col">
+                        <img src="img/Moms_Touch.jpg" width ="300" height="300">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d611.4810287355803!2d127.07053286332608!3d36.79559899670625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ad8ee744347a3%3A0xbdb15b03c0901c39!2z7JWE7IKw7IucIO2DleygleuptCDshKDrrLjrjIDtlZnqtZAg7IOd7Zmc7Lmc6rWQ6rSA!5e0!3m2!1sko!2skr!4v1541514214288" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col">
+                        <div class="card" style="width: 18rem;">
+                                <div class="card-body" >
+                                  <h5 class="card-title">메뉴</h5>
+                                  <a data-toggle="modal" data-target="#register"><p style="color:#007580;">찾는 메뉴가 없다면...?</p></a>
+                                  <!-- <h6 class="card-subtitle mb-2 text-muted">맘스터치의 모든 메뉴에요</h6> -->
+                                 <ul id ="index">
+
+                                 </ul>
+                                    <script>
+                                    for(var i=0; i<all_menu.length; i++){
+                                        index.innerHTML += '<li>'+all_menu[i].name+'</li><ol class="category"></ol>'
+
+                                        for(var j=0; j<all_menu[i].list.length; j++){
+                                            document.getElementsByClassName("category")[i].innerHTML += '<a href="#'+all_menu[i].list[j].name+'_card"><li id="'+all_menu[i].list[j].name+'_index">'+all_menu[i].list[j].name+'</li></a>';
+                                        }
+                                    }
+                                    </script>
+                                </div>
+                              </div>
+                          <!-- Modal -->
+                        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="register">새로운 매뉴 등록</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <!-- select input -->
+                              <div class="modal-body">
+                                <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                                  </div>
+                                  <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>분류를 선택하세요.</option>
+                                    <option value="1">버거 메뉴</option>
+                                    <option value="2">사이드 메뉴</option>
+                                    <option value="3">음료수</option>
+                                  </select>
+                                </div>
+                              
+                              <!-- select input -->
+                              <!-- text input -->
+                              <form>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">메뉴 이름</label>
+                                        </div>
+                                        <div class="col" style="color:#9E1030" id="text_input1">
+                                            <i class="fas fa-exclamation-triangle"></i> 필수입력
+                                        </div>
+                                      </div>
+                                  
+                                  <input type="text" class="form-control" id="formGroupExampleInput">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">가격</label>
+                                        </div>
+                                        <div class="col" style="color:#9E1030" id="text_input2">
+                                            <i class="fas fa-exclamation-triangle"></i> 필수입력
+                                        </div>
+                                      </div>
+                                  <input type="text" class="form-control" id="formGroupExampleInput2">
+                                </div>
+                                <div class="form-group">
+                                  <label for="formGroupExampleInput2">기타사항</label>
+                                  <input type="text" class="form-control" id="formGroupExampleInput2">
+                                </div>
+                              </form>
+
+                              <!-- text input -->
+
+                              <!-- picture input -->
+                              <form>
+                                <div class="form-group">
+                                  <label for="exampleFormControlFile1">이미지</label>
+                                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                </div>
+                              </form>
+                              <!-- picture input -->
+                            </div>
+
+                              
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+              </div>
+              <br><br>
+
+                  <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="~ 원 이하만 찾기" aria-label="Recipient's username" aria-describedby="button-addon2" id="textBox">
+
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="new_mmmm()"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+                      <script>
+                      function new_mmmm(){
+                          MAX = textBox.value;
+                          mmmm();
+                      }
+                      </script>
+              <!-- 인트로 끝 -->
+            <div id = "card_box">
+
+            </div>
+          </div><!--              container 끝     -->
+      </div>
+    </header>
+
+    <!-- Footer -->
+    <footer class="footer"  style="padding: 2rem 0;">
+      <div class="container" style="opacity:100">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Twitter Bootstrap Opensource.</p>
+            <p class="text-muted small mb-4 mb-lg-0">Edited by design thinking Team3. </p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fas fa-edit fa-2x" style="color:dimgray"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="far fa-comment fa-2x" style="color:dimgray;"></i>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="menu.js"></script>
+    <script>
+        MAX = 99999
+function mmmm(){
+        card_box.innerHTML = ''
+
+        for(var i=0; i<all_menu.length; i++){
+            // alert(all_menu[i].name)
+            card_box.innerHTML += '<h5>'+all_menu[i].name+'</h5><hr>\
+            <div class="card-columns text-center"></div>'
+                for(var j=0; j<all_menu[i].list.length; j++){
+                    if(all_menu[i].list[j].price>MAX){
+
+                    }else{
+
+                    
+                    if(all_menu[i].list[j].src==""){
+                        src = "img/noimage.png"
+                    }else{
+                        src = all_menu[i].list[j].src
+                    }
+                    
+                    // alert(all_menu[i].list[j].name)
+                    document.getElementsByClassName("card-columns text-center")[i].innerHTML += '\
+                    <div class="card" style="width: 18rem;">\
+  <img class="card-img-top" src="'+src+'" alt="Card image cap" width="18rem" height="auto" id="'+all_menu[i].list[j].name+'_card"><hr>\
+  <div class="card-body">\
+        <a href="#'+all_menu[i].list[j].name+'_index"><h6>'+all_menu[i].list[j].name+'</h6></a>₩ '+all_menu[i].list[j].price+' &nbsp<i class="fas fa-exclamation-circle" style="color:#ff7b00" data-toggle="modal" data-target="#'+all_menu[i].list[j].name+'"></i>\
+  </div>\
+  <div class="modal fade" id="'+all_menu[i].list[j].name+'" tabindex="-1" role="dialog" aria-labelledby="'+all_menu[i].list[j].name+'" aria-hidden="true">\
+                        <div class="modal-dialog" role="document">\
+                            <div class="modal-content">\
+                                <div class="modal-header">\
+                                    <h5 class="modal-title" id="'+all_menu[i].list[j].name+'">'+all_menu[i].list[j].name+'</h5>\
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;\</span></button>\
+                                </div>\
+                                <div class="modal-body"><p>\
+                                    '+all_menu[i].list[j].modal+'</p>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+</div>'
+
+}
+                }
+
+        }
+    }
+    mmmm();
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

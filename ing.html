@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+    <script src="inform.js"></script>
+
+    <script>
+      var url = decodeURI(String(location.search))
+      url = url.slice(1,url.length)
+      if(url=="맘스터치"){
+        window.location.href="Moms_Touch_byJS.html"
+      }
+    </script>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-light static-top" style="background-color:#007580;">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="color:white;"><b id="keyword" >.</b></a>
+      </div>
+    </nav>
+    <script>
+    keyword.innerHTML = url;
+    </script>
+
+    <!-- Masthead -->
+    <header class="masthead text-lg-left" style="background-image: None; padding: 8rem 0;">
+      <div class="container" id="container">
+          <div class="container">
+          
+          </div>
+      </div>
+    </header>
+    <script>
+      function make_page(url, n){
+        container.innerHTML = '    <div class="row">\
+                <div class="col" id="left">\
+                  \
+                </div>\
+                <div class="col">\
+                    <div class="card" style="width: 18rem;">\
+                        <div class="card-body" >\
+                          <h5 class="card-title">목차</h5>\
+                          <p id="index"></p>\
+                        </div>\
+                      </div>\
+                </div>\
+          </div>'
+          if(page[1].logo!=undefined){
+              left.innerHTML = '<img src="img/'+page[1].logo+'" width=300 height=300>'
+          }
+          for(var i=0; i<page[n].section.length; i++){
+            index.innerHTML+= i+") "+page[n].section[i]+"<br>"
+          }
+          index.innerHTML+= i+") 메뉴"+"<br>";
+      }
+      function no_result(){
+        container.innerHTML = '<div class="jumbotron">\
+  <h1 class="display-4">이런!</h1>\
+  <p class="lead">검색 결과가 없군요.</p>\
+  <hr class="my-4">\
+  <p><a href="#" style="color:#007580;" data-toggle="modal" data-target="#exampleModalCenter">직접 등록 해 보는 것은 어떨까요?</a></p>\
+</div>'
+      }
+        for(var i=0; i<page.length; i++){
+      // alert(page[i])
+      if(page[i] == url){
+        make_page(url,i+1);
+        break;
+      }else{
+        if(i==page.length-1){
+        no_result();
+        }
+      }
+    }
+    </script>
+
+   
+
+    <!-- Footer -->
+    <footer class="footer"  style="padding: 2rem 0;">
+      <div class="container" style="opacity:100">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Twitter Bootstrap Opensource.</p>
+            <p class="text-muted small mb-4 mb-lg-0">Edited by design thinking Team3. </p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fas fa-edit fa-2x" style="color:dimgray"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="far fa-comment fa-2x" style="color:dimgray;"></i>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">새로운 매장 등록하기</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">상호명</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">전화번호</label>
+                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              <button type="button" class="btn btn-primary">등록하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
