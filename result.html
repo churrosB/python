@@ -1,0 +1,176 @@
+      <!doctype html>
+<html lang="en">
+  <head>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+
+    <title>Hello, world!</title>
+    <style>
+            @font-face { font-family: 'hanna'; src: url(BMHANNA_11yrs_ttf.ttf) format('truetype'); }
+            @font-face { font-family: 'pro'; src: url(BMHANNAPro.ttf) format('truetype'); }
+            @font-face { font-family: 'Air'; src: url(BMHANNAAir_ttf.ttf) format('truetype'); }
+            
+                body{
+                    /* font-family: 'hanna'; */
+                    /* font-family: 'pro';  */
+                    font-family: 'Air'
+                    
+                }
+    h1{
+        font-family: 'pro';
+    }
+    button{
+        font-style: none;
+        background-color: black;
+        color: white;
+        border-style: none;
+        font-size: 1.35rem;
+    }
+
+    .footer{
+        font-family: none;
+        background-color: #333333;
+        color:#ececec; 
+        border-radius: 0;
+        margin-bottom: 4rem;
+    }
+    .card-body{
+        padding: 0;
+        margin-bottom: 4rem;
+    }
+    .card{
+        border-style: none;
+        
+    }
+    .card-img-top{
+        height: 13rem;
+        margin-bottom: 0.6rem;
+    }
+    .container{
+        padding: 2rem 2rem;
+    }
+    .col-sm{
+        font-size: 1.3rem;
+        line-height: 4rem;
+        opacity: 0.4;
+    }
+    a{
+        color: black;
+    }
+    .card-body{
+        margin: 0;
+        padding: 2rem 1rem;
+    }
+    h5{
+        /* font-size: 1.3rem; */
+        line-height: 2.2rem;
+        background-color: #ececec;
+    }
+    .pad20{
+        padding: 2rem 0; 
+    }
+    .pad21{
+        padding: 2rem 1rem;
+    }
+
+
+    </style>
+  </head>
+  <body>
+        
+        <script src="menu.js"></script>
+        <script> var url = decodeURI(String(location.search))
+                url = url.slice(1,url.length)</script>
+        <div class="container text-center">
+            <div class="col-md-10 col-lg-8 col-xl-9 mx-auto">
+                <div class="shadow mb-5 bg-white rounded">
+                    <h1 id="page_title"></h1>
+                    <p id="store_info" style="padding-bottom:2rem;"></p>
+                </div>
+
+                <div class="shadow mb-5 bg-white rounded">
+                    <div class="row" style="margin:0;">
+                        <div class="col-sm"><a href="javascript:;" onclick="set_main_text(0)"> 메뉴 </a></div>
+                        <div class="col-sm"><a href="javascript:;" onclick="set_main_text(1)"> 위치 </a></div>
+                        <div class="col-sm"><a href="javascript:;" onclick="set_main_text(2)"> 리뷰 </a></div>                        
+                    </div>
+
+                </div>
+
+                <div class="shadow mb-5 bg-white rounded">
+                <div id="main_text">
+                        
+                    </div>
+                </div>
+                <script>
+                function set_main_text(toggle){
+                    for(var i=0; i<document.getElementsByClassName("col-sm").length; i++){
+                        document.getElementsByClassName("col-sm")[i].style.fontFamily="Air"
+                    document.getElementsByClassName("col-sm")[i].style.opacity="0.4"
+                    }
+                    document.getElementsByClassName("col-sm")[toggle].style.fontFamily="Pro"
+                    document.getElementsByClassName("col-sm")[toggle].style.opacity="1"
+                    
+                        
+                    if(toggle == 0){
+                        main_text.innerHTML = '<div class="accordion" id="accordionExample"><div>'
+                        
+                        for(var j=0; j<ALL[url].list.length; j++){
+                                // alert(j==0) 
+                                accordionExample.innerHTML += '<div class="card"><h5 class="card-header" style="font-family: pro">'+ALL[url].list[j].name+'</h5><div class="card-body text-left"></div></div>'
+                                    for(k=0; k<ALL[url].list[j].list.length; k++){
+                                        document.getElementsByClassName("card-body")[j].innerHTML += '<label><i class="fas fa-caret-right"></i> '+ALL[url].list[j].list[k].name+' : '+ALL[url].list[j].list[k].price+'원 </label><br>'                        
+                                    }
+                                    
+                                }
+                    }else if(toggle == 1){
+                        main_text.innerHTML = '<div class="pad20"><iframe src="'+ALL[url].map+'" width="90%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe><br><br><p>'+ALL[url].map_text+'</p></div>'
+                    }else if(toggle == 2){
+                        main_text.innerHTML = '<div class="pad21"><form><div class="form-group"><h5 style="background-color:white;">'+ALL[url].name+'에 대한 의견을 남겨주세요! </h5><textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea></div></form><button class="btn-block">제출</button></div>'
+                    }
+                }
+                set_main_text(0)
+                </script>
+
+            </div>
+        </div>
+        <script>
+        page_title.innerHTML = ALL[url].name;
+            // store_info.innerHTML = '<label>배달 가능 <i class="fas fa-check" style="color:#3F69AA;"></i> <i class="fas fa-times" style="color:#9E1030;"></i></label><br>'
+            // store_info.innerHTML += ALL[url].tel+'<br>'
+            // store_info.innerHTML += '<iframe src="'+ALL[url].map+'" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe><br>'
+            if(ALL[url].delevery_cost_TF == true){
+                store_info.innerHTML += '<label>배달비 '+ALL[url].delevery_cost+'원</label><br>'
+            }
+            if(ALL[url].toss_TF == true){
+                store_info.innerHTML += '<label>계좌이체 가능 <i class="fas fa-check" style="color:#3F69AA;"></i></label><br>'
+            }else{
+                store_info.innerHTML += '<label>계좌이체 불가능 <i class="fas fa-times" style="color:#9E1030;"></i></label><br>'
+            }
+            
+
+        
+        </script>
+        <a href="tel:"+ALL[url].tel><button class = "btn-block fixed-bottom" style="font-family: 'pro'; padding: 0.8rem 0.8rem;" onmouseover="this.innerHTML = ALL[url].tel" onmouseout="this.innerHTML='전화주문'">전화주문</button></a>
+
+        <div class="jumbotron footer text-center">
+                <p> &copy; Twitter Bootstrap Opensource.</p>
+                <p> Edited by DT team3</p>
+              </div>
+
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

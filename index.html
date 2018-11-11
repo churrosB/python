@@ -1,230 +1,199 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <style>
+            @font-face { font-family: 'hanna'; src: url(BMHANNA_11yrs_ttf.ttf) format('truetype'); }
+            @font-face { font-family: 'pro'; src: url(BMHANNAPro.ttf) format('truetype'); }
+            @font-face { font-family: 'Air'; src: url(BMHANNAAir_ttf.ttf) format('truetype'); }
+            
+                body{
+                    /* font-family: 'hanna'; */
+                    font-family: 'pro'; 
+                    /* font-family: 'Air' */
+                    
+                }
+    button{
+        font-style: none;
+        background-color: black;
+        color: white;
+        border-style: none;
+        font-size: 1.35rem;
+    }
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    .footer{
+        font-family: none;
+        background-color: #333333;
+        color:#ececec; 
+        border-radius: 0;
+        margin: 0;
+    }
+    .card-body{
+        padding: 0;
+        margin-bottom: 4rem;
+    }
+    .card{
+        border-style: none;
+        
+    }
+    .menu{
+        font-family: 'Air'
+    }
+    .card-img-top{
+        height: 13rem;
+        margin-bottom: 0.6rem;
+    }
+    .container{
+        padding: 2rem 2rem;
+    }
 
-    <!-- Custom styles for this template -->
-    <link href="css/landing-page.min.css" rel="stylesheet">
 
+    </style>
   </head>
-
   <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <a class="btn btn-primary" href="#">Sign In</a>
-      </div>
-    </nav>
-
-    <!-- Masthead -->
-    <header class="masthead text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
-              </div>
-              <h3>Fully Responsive</h3>
-              <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+        <script src="menu.js"></script>
+        <div class="container">
+            <div class="col-md-10 col-lg-8 col-xl-9 mx-auto ">
+                <!-- Content here -->
+                <h2 style="padding-bottom:0.3rem;">선문 배달</h2>
+                <input class="form-control form-control-lg" type="text" placeholder="" style="border-radius:0;" id="search_bar">
+                <ul class="list-group" id="recomment">
+                        <!-- <li class="list-group-item" style="border-radius:0;">Cras justo odio</li> -->
+                </ul>
+                <script>
+                    function myFunction(i){
+                        URL = encodeURI(i, "UTF-8")
+                        var mywindow = window.open("result.html?"+URL);
+                    }
+                        setInterval(function(){ 
+                            count = 0
+                            if(search_bar.value == ""){
+                                recomment.innerHTML = ''
+                            }else{
+                            recomment.innerHTML = ''
+                            for(var i=0; i<ALL.length; i++){
+                                if(ALL[i].name.indexOf(search_bar.value) != -1){
+                                    count++
+                                    recomment.innerHTML += '<li class="list-group-item" style="border-radius:0;"><a href="#" onclick="myFunction('+i+')" style="color:black;">'+ALL[i].name+'</a></li>'
+                                }
+                            }   
+                            for(var i=0; i<ALL.length; i++){
+                                for(var j=0; j<ALL[i].list.length; j++){
+                                    for(k=0; k<ALL[i].list[j].list.length; k++){
+                                        if(ALL[i].list[j].list[k].name.indexOf(search_bar.value) != -1){
+                                            count++
+                                            recomment.innerHTML += '<li class="list-group-item menu" style="border-radius:0;"><a href="#" onclick="myFunction('+i+')" style="color:black;">'+ALL[i].name+' >>> '+ALL[i].list[j].list[k].name+'</a></li>'
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                            }
+                            if(count != 0){
+                                recomment.innerHTML += '<li class="list-group-item" style="border-radius:0; color:#007bff">찾는 메뉴가 없다면?</li>'
+                            }
+                            
+                        }
+                        }, 500);               
+                </script>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
-              </div>
-              <h3>Bootstrap 4 Ready</h3>
-              <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-check m-auto text-primary"></i>
-              </div>
-              <h3>Easy to Use</h3>
-              <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Image Showcases -->
-    <section class="showcase">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters">
-
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>Fully Responsive Design</h2>
-            <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
-          <div class="col-lg-6 my-auto showcase-text">
-            <h2>Updated For Bootstrap 4</h2>
-            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>Easy to Use &amp; Customize</h2>
-            <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials text-center bg-light">
-      <div class="container">
-        <h2 class="mb-5">What people are saying...</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-              <h5>Margaret E.</h5>
-              <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-              <h5>Fred S.</h5>
-              <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-              <h5>Sarah	W.</h5>
-              <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="call-to-action text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+        <div class="jumbotron jumbotron-fluid" style="background-color: #ececec; border-top: 1px solid #ccc; height: 30rem;" >
+                <div class="container">
+                    <!-- <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/%ED%95%9C%EC%86%A5%EB%A1%9C%EA%B3%A0.png" alt="한솥로고.png" width="300"></p> -->
+                  
+                    <h1 class="display-4">Fluid jumbotron</h1>
+                  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                  
                 </div>
               </div>
-            </form>
-          </div>
+
+        <div class="container">
+        <div class="col-md-10 col-lg-8 col-xl-9 mx-auto">
+                <div class="row">
+                        <div class="col-8" id="refresh"><h2>오늘 뭐 먹지?</h2></div>
+                        <div class="col-4 text-right"><h2><a href="#refresh" onclick="set_card()" style="color:black;"><i class="fas fa-sync-alt"></i></a></h2></div>
+                      </div>
+            
+            <hr style="border: solid 2px black;">
+            
+                <div class="card-deck">
+                        <div class="card">
+                          <div class="card-body">
+                                <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                            <p class="card-text" id="card_A"></p>
+                            <p class="card-text-price text-right"></p> 
+                            <button class="btn-block" onmouseover="this.innerHTML = '123'" onmouseout="this.innerHTML='전화주문'">전화주문</button>
+                          </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                                <p class="card-text" id="card_A"></p>
+                                <p class="card-text-price text-right"></p> 
+                                <button class="btn-block" onmouseover="this.innerHTML = '123'" onmouseout="this.innerHTML='전화주문'">전화주문</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                    <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                                <p class="card-text" id="card_A"></p>
+                                <p class="card-text-price text-right"></p> 
+                                <button class="btn-block" onmouseover="this.innerHTML = '123'" onmouseout="this.innerHTML='전화주문'">전화주문</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                                <p class="card-text" id="card_A"></p>
+                                <p class="card-text-price text-right"></p> 
+                                <button class="btn-block" onmouseover="this.innerHTML = '123'" onmouseout="this.innerHTML='전화주문'">전화주문</button>
+                            </div>
+                        </div>
+                              
+                      </div>
+                </div>
         </div>
-      </div>
-    </section>
+        <script>
+             function getRandomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min)) + min;
+                    }
+        function set_card(){
+            for(var i=0; i<4; i++){
+                // card-text[0]
+            choice_store = getRandomInt(0,ALL.length)
+            choice_category = getRandomInt(0, ALL[choice_store].list.length)
+            choice_menu = getRandomInt(0, ALL[choice_store].list[choice_category].list.length)
 
-    <!-- Footer -->
-    <footer class="footer bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-            </ul>
-            <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
-          </div>
-          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fab fa-facebook fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+            // document.getElementsByClassName("card-text")[0].innerHTML += ALL[choice_store].list[choice_category].name + '<br>'
+            document.getElementsByClassName("card-text")[i].innerHTML = ALL[choice_store].list[choice_category].list[choice_menu].name
+            document.getElementsByClassName("card-text")[i].innerHTML += ' ('+ALL[choice_store].name+')'
+            document.getElementsByClassName("card-text-price")[i].innerHTML = ALL[choice_store].list[choice_category].list[choice_menu].price+'원'
+            }
+        
+            }
+            set_card();
+       
+            </script>
+        <div class="jumbotron footer text-center">
+                <p> &copy; Twitter Bootstrap Opensource.</p>
+                <p> Edited by DT team3</p>
+              </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
-
 </html>
