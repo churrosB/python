@@ -108,11 +108,11 @@
 
                 <div class="shadow mb-5 bg-white rounded">
                 <div id="main_text">
-
+<div class="input-group mb-3"><input type="text" class="form-control" placeholder="~ 원 이하만 찾기" aria-describedby="button-addon2" id="textBox"><div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="set_main_text(0, textBox.value)"><i class="fas fa-search"></i></button></div></div><div class="alert alert-light" role="alert" style="margin:0;"><a href="javascript:;">찾는 메뉴가 없을 때는 ...</a></div>
                     </div>
                 </div>
                 <script>
-                function set_main_text(toggle){
+                function set_main_text(toggle, max){
                     for(var i=0; i<document.getElementsByClassName("col-sm").length; i++){
                         document.getElementsByClassName("col-sm")[i].style.fontFamily="Air"
                     document.getElementsByClassName("col-sm")[i].style.opacity="0.4"
@@ -120,16 +120,21 @@
                     document.getElementsByClassName("col-sm")[toggle].style.fontFamily="Pro"
                     document.getElementsByClassName("col-sm")[toggle].style.opacity="1"
 
-
                     if(toggle == 0){
-                        main_text.innerHTML = '<div class="alert alert-light" role="alert" style="margin:0;"><a href="javascript:;">찾는 메뉴가 없을 때는 ...</a></div>'
+                      max = 99999
+                        main_text.innerHTML = ''
                         main_text.innerHTML += '<div class="accordion" id="accordionExample"><div>'
-
+                        // alert(textBox.value)
+                        accordionExample.innerHTML = ''
                         for(var j=0; j<ALL[url].list.length; j++){
                                 // alert(j==0)
                                 accordionExample.innerHTML += '<div class="card"><h5 class="card-header" style="font-family: pro">'+ALL[url].list[j].name+'</h5><div class="card-body text-left"></div></div>'
+                                document.getElementsByClassName("card-body")[j].innerHTML = ''
+
                                     for(k=0; k<ALL[url].list[j].list.length; k++){
+                                      if(ALL[url].list[j].list[k].price < max){
                                         document.getElementsByClassName("card-body")[j].innerHTML += '<label><i class="fas fa-caret-right"></i> '+ALL[url].list[j].list[k].name+' : '+ALL[url].list[j].list[k].price+'원 <a style="color:black" href="image.html?'+ALL[url].list[j].list[k].src+'"><i class="far fa-image"></i></a></label><br>'
+                                      }
                                     }
 
                                 }
@@ -140,7 +145,7 @@
 
                     }
                 }
-                set_main_text(0)
+                set_main_text(0, 99999)
                 </script>
 
             </div>
@@ -150,6 +155,7 @@
             // store_info.innerHTML = '<label>배달 가능 <i class="fas fa-check" style="color:#3F69AA;"></i> <i class="fas fa-times" style="color:#9E1030;"></i></label><br>'
             // store_info.innerHTML += ALL[url].tel+'<br>'
             // store_info.innerHTML += '<iframe src="'+ALL[url].map+'" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe><br>'
+            store_info.innerHTML += '<label>'+ALL[url].time+'</label><br>'
             if(ALL[url].delevery_cost_TF == true){
                 store_info.innerHTML += '<label>배달비 '+ALL[url].delevery_cost+'원</label><br>'
             }

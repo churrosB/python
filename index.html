@@ -190,8 +190,9 @@
 
                 <div class="card-deck">
                         <div class="card">
+
                           <div class="card-body">
-                                <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                                <a href="javascript:;" class="move"><img class="card-img-top" src="img/noimage.png" alt="Card image cap"></a>
                             <p class="card-text" id="card_A"></p>
                             <p class="card-text-price text-right"></p>
                             <div class="order_button"></div>
@@ -200,7 +201,7 @@
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                                <a href="javascript:;" class="move"><img class="card-img-top" src="img/noimage.png" alt="Card image cap"></a>
                                 <p class="card-text" id="card_A"></p>
                                 <p class="card-text-price text-right"></p>
                                 <div class="order_button"></div>
@@ -209,7 +210,7 @@
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                    <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                                  <a href="javascript:;" class="move"><img class="card-img-top" src="img/noimage.png" alt="Card image cap"></a>
                                 <p class="card-text" id="card_A"></p>
                                 <p class="card-text-price text-right"></p>
                                 <div class="order_button"></div>
@@ -218,7 +219,7 @@
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                                <a href="javascript:;" class="move"><img class="card-img-top" src="img/noimage.png" alt="Card image cap"></a>
                                 <p class="card-text" id="card_A"></p>
                                 <p class="card-text-price text-right"></p>
                                 <div class="order_button"></div>
@@ -266,6 +267,7 @@
             }
             document.getElementsByClassName("card-img-top")[i].src = ""+src
             document.getElementsByClassName("order_button")[i].innerHTML = '<a href="tel:'+ALL[choice_store].tel+'"><button class="btn-block">'+ALL[choice_store].tel+'</button></a>';
+            document.getElementsByClassName("move")[i].href="result.html?"+choice_store
             }
 
             }

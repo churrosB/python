@@ -3,6 +3,7 @@ class store{
         this.name = name
         this.list = new Array
         this.tel = ""
+        this.time = ""
         // this.location = ""
         // this.delevery_cost_TF = true;
         // this.delevery_cost = 0;
@@ -28,6 +29,9 @@ class store{
     }
     set_tossTF(tossTF){
         this.tossTF = tossTF
+    }
+    set_time(time){
+      this.time = time
     }
 }
 
@@ -57,6 +61,7 @@ STORE.set_map_text("선문대학교 친교관 1층 맘스터치")
 STORE.set_delevery_cost_TF(true)
 STORE.set_delevery_cost(2000);
 STORE.set_tossTF(false);
+STORE.set_time("11:00 ~ 20:30")
     CATEGORY = new category("버거메뉴");
         CATEGORY.set_menu(new menu("마살라버거_세트",6000,"img/마살라버거.jpg"))
         CATEGORY.set_menu(new menu("치즈베이컨버거_세트",6500,"img/치즈베이컨버거.jpg"))
@@ -91,6 +96,7 @@ STORE.set_map_text("충청남도 아산시 탕정면 탕정면로 37 (트라펠�
 STORE.set_delevery_cost_TF(false)
 STORE.set_delevery_cost(0);
 STORE.set_tossTF(false);
+STORE.set_time("11:00 ~ 22:00")
     CATEGORY = new category("클래식피자");
         CATEGORY.set_menu(new menu("치즈피자",6000,"img/치즈피자.jpg"))
         CATEGORY.set_menu(new menu("페퍼로니피자",6000,"img/페퍼로니피자.jpg"))
