@@ -140,6 +140,7 @@
 
     </div>
     <div class="carousel-item">
+      <a href="https://www.hsd.co.kr/event/event_view/330?pageSize=12&pageNo=1&cate=&_csrf=b5ba6cc6-3e2a-42ac-a738-5e7218f88f42">
       <div class="jumbotron jumbotron-fluid" style="background-color: #fdcf33; border-top: 1px solid #ccc; height: 30rem;" >
               <div class="container">
                   <!-- <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/%ED%95%9C%EC%86%A5%EB%A1%9C%EA%B3%A0.png" alt="한솥로고.png" width="300"></p> -->
@@ -151,8 +152,10 @@
                   </div>
               </div>
             </div>
+          </a>
     </div>
     <div class="carousel-item">
+      <a href="result.html?3">
       <div class="jumbotron jumbotron-fluid" style="background-color: black; color:white; border-top: 1px solid #ccc; height: 30rem;" >
               <div class="container">
                   <!-- <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/%ED%95%9C%EC%86%A5%EB%A1%9C%EA%B3%A0.png" alt="한솥로고.png" width="300"></p> -->
@@ -165,6 +168,7 @@
                     <label>Beef 브리또 : 4000원 / Chicken 브리또 3500원</label>
               </div>
             </div>
+          </a>
 
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -254,10 +258,16 @@
                     return Math.floor(Math.random() * (max - min)) + min;
                     }
         function set_card(){
-            for(var i=0; i<4; i++){
+          var i = 0;
+          while(i<4){
+            // for(var i=0; i<4; i++){
                 // card-text[0]
             choice_store = getRandomInt(0,ALL.length)
             choice_category = getRandomInt(0, ALL[choice_store].list.length)
+            // alert(ALL[choice_store].list[choice_category].SideFalse)
+            if(ALL[choice_store].list[choice_category].SideFalse==true){
+
+
             choice_menu = getRandomInt(0, ALL[choice_store].list[choice_category].list.length)
 
             // document.getElementsByClassName("card-text")[0].innerHTML += ALL[choice_store].list[choice_category].name + '<br>'
@@ -272,8 +282,12 @@
             document.getElementsByClassName("card-img-top")[i].src = ""+src
             document.getElementsByClassName("order_button")[i].innerHTML = '<a href="tel:'+ALL[choice_store].tel+'"><button class="btn-block">'+ALL[choice_store].tel+'</button></a>';
             document.getElementsByClassName("move")[i].href="result.html?"+choice_store
-            }
+            // }
+            i = i+1;
+          }else{
 
+          }
+              }
             }
             set_card();
 
