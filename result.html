@@ -81,6 +81,9 @@
     .pad21{
         padding: 2rem 1rem;
     }
+    .mb-3, .my-3 {
+    margin-bottom: 0rem!important;
+}
 
 
     </style>
@@ -108,8 +111,15 @@
 
                 <div class="shadow mb-5 bg-white rounded">
                 <div id="main_text">
-<div class="input-group mb-3"><input type="text" class="form-control" placeholder="~ 원 이하만 찾기" aria-describedby="button-addon2" id="textBox"><div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="set_main_text(0, textBox.value)"><i class="fas fa-search"></i></button></div></div><div class="alert alert-light" role="alert" style="margin:0;"><a href="javascript:;">찾는 메뉴가 없을 때는 ...</a></div>
-                    </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="~ 원 이하만 찾기" aria-describedby="button-addon2" id="textBox">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="set_main_text(0, textBox.value)"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+<!-- <div class="alert alert-light" role="alert" style="margin:0;"><a href="javascript:;">찾는 메뉴가 없을 때는 ...</a></div> -->
+</div>
+
                 </div>
                 <script>
                 function set_main_text(toggle, max){
@@ -133,7 +143,13 @@
 
                                     for(k=0; k<ALL[url].list[j].list.length; k++){
                                       if(ALL[url].list[j].list[k].price < max){
-                                        document.getElementsByClassName("card-body")[j].innerHTML += '<label><i class="fas fa-caret-right"></i> '+ALL[url].list[j].list[k].name+' : '+ALL[url].list[j].list[k].price+'원 <a style="color:black" href="image.html?'+ALL[url].list[j].list[k].src+'"><i class="far fa-image"></i></a></label><br>'
+                                        document.getElementsByClassName("card-body")[j].innerHTML += '<label><i class="fas fa-caret-right"></i> '+ALL[url].list[j].list[k].name+' : '+ALL[url].list[j].list[k].price+'원 </label>'
+
+
+                                          if(ALL[url].list[j].list[k].src != ""){
+                                                document.getElementsByClassName("card-body")[j].innerHTML +=' <a style="color:black" href="image.html?'+ALL[url].list[j].list[k].src+'"><i class="far fa-image"></i></a>'
+                                          }
+                                          document.getElementsByClassName("card-body")[j].innerHTML +='<br>'
                                       }
                                     }
 
@@ -159,16 +175,16 @@
             if(ALL[url].delevery_cost_TF == true){
                 store_info.innerHTML += '<label>배달비 '+ALL[url].delevery_cost+'원</label><br>'
             }
-            if(ALL[url].toss_TF == true){
+            if(ALL[url].tossTF == true){
                 store_info.innerHTML += '<label>계좌이체 가능 <i class="fas fa-check" style="color:#3F69AA;"></i></label><br>'
             }else{
                 store_info.innerHTML += '<label>계좌이체 불가능 <i class="fas fa-times" style="color:#9E1030;"></i></label><br>'
             }
 
 
-
         </script>
-        <a href="tel:"+ALL[url].tel><button class = "btn-block fixed-bottom" style="font-family: 'pro'; padding: 0.8rem 0.8rem;" onmouseover="this.innerHTML = ALL[url].tel" onmouseout="this.innerHTML='전화주문'">전화주문</button></a>
+
+        <a href="tel:'+ALL[url].tel+'"><button class = "btn-block fixed-bottom" style="font-family: 'pro'; padding: 0.8rem 0.8rem;" onmouseover="this.innerHTML = ALL[url].tel" onmouseout="this.innerHTML='전화주문'">전화주문</button></a>
 
         <div class="jumbotron footer text-center">
                 <p> &copy; Twitter Bootstrap Opensource.</p>

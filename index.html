@@ -73,7 +73,7 @@
                     <div class="shadow mb-5 bg-white rounded">
                 <!-- Content here -->
                 <h2 style="padding-bottom:0.3rem;">선문 배달</h2><br>
-                <input class="form-control form-control-lg" type="text" placeholder="상호명 또는 메뉴명 검색" style="border-radius:0;" id="search_bar">
+                <input class="form-control form-control-lg" type="text" placeholder="가게 / 메뉴로 검색" style="border-radius:0;" id="search_bar">
                 <ul class="list-group" id="recomment">
                         <!-- <li class="list-group-item" style="border-radius:0;">Cras justo odio</li> -->
                 </ul>
@@ -91,7 +91,7 @@
                             for(var i=0; i<ALL.length; i++){
                                 if(ALL[i].name.indexOf(search_bar.value) != -1){
                                     count++
-                                    recomment.innerHTML += '<li class="list-group-item" style="border-radius:0;"><a href="#" onclick="myFunction('+i+')" style="color:black;">'+ALL[i].name+'</a></li>'
+                                    recomment.innerHTML += '<a href="#" onclick="myFunction('+i+')" style="color:black;"><li class="list-group-item" style="border-radius:0;">'+ALL[i].name+'</li></a>'
                                 }
                             }
                             for(var i=0; i<ALL.length; i++){
@@ -99,7 +99,7 @@
                                     for(k=0; k<ALL[i].list[j].list.length; k++){
                                         if(ALL[i].list[j].list[k].name.indexOf(search_bar.value) != -1){
                                             count++
-                                            recomment.innerHTML += '<li class="list-group-item menu" style="border-radius:0;"><a href="#" onclick="myFunction('+i+')" style="color:black;">'+ALL[i].name+' >>> '+ALL[i].list[j].list[k].name+'</a></li>'
+                                            recomment.innerHTML += '<a href="#" onclick="myFunction('+i+')" style="color:black;"><li class="list-group-item menu" style="border-radius:0;">'+ALL[i].name+' >>> '+ALL[i].list[j].list[k].name+'</li></a>'
                                         }
 
                                     }
@@ -130,9 +130,10 @@
                   <!-- <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/%ED%95%9C%EC%86%A5%EB%A1%9C%EA%B3%A0.png" alt="한솥로고.png" width="300"></p> -->
 
                   <h1 class="display-4">선문 배달</h1>
-                <h2>문서 작성에 동참해주세요!  </h2><br><br><br><br><br><br>
+                <h2>사용자 만족도 조사에 참여해주세요!  </h2><br><br><br><br><br><br>
                   <div class="align-self-baseline">
-                      <button style="padding:0.8rem; background-color:black; border-style:none;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><h2>등록하러 가기 <i class="fas fa-edit"></i></h2></button>
+                      <!-- <button style="padding:0.8rem; background-color:black; border-style:none;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><h2>등록하러 가기 <i class="fas fa-edit"></i></h2></button> -->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeijpcfwrVhZPVWNYCmyZdnGc1yr9Ae1kjGZDXN1q_dF6IHWA/viewform?usp=sf_link"><button style="padding:0.8rem; background-color:black; border-style:none;"><h2>참여하러 가기 <i class="fas fa-edit"></i></h2></button></a>
                   </div>
               </div>
             </div>
@@ -237,7 +238,8 @@
                     <h2>같이 시키실 분!</h2>
                     <hr style="border: solid 2px black;">
                     <label> >>> 익명의 유저와 함께 무료배달 합시다!</label><br>
-                    <iframe src="http://go.gagalive.kr/d/~~~new_SM_delevery" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <!-- <iframe src="http://go.gagalive.kr/d/~~~new_SM_delevery" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+                    <div class="text-center" style="padding-top:8rem; border:1px solid black; height:18rem; background-color:#333333; color:white;" width="100%"><h3> 준비 중 입니다...</h3> </div>
                                         </div>
 
         </div>

@@ -178,7 +178,7 @@ STORE.set_map_text("충청남도 아산시 탕정면 갈산리 47-5")
 STORE.set_delevery_cost_TF(false)
 STORE.set_delevery_cost(0);
 STORE.set_tossTF(true);
-STORE.set_time("??? ~ ???")
+STORE.set_time("??? ~ 20:00")
     CATEGORY = new category("브리또 (안 매운맛/조금 매운맛/아주 매운맛)");
         CATEGORY.set_menu(new menu("Chicken 브리또",3500,"img/도스마스브리또.png"))
         CATEGORY.set_menu(new menu("Beef 브리또",4000,"img/도스마스브리또.png"))
