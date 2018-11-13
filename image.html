@@ -38,6 +38,12 @@ margin: 8rem auto;
             <script src="menu.js"></script>
     <script> var url = decodeURI(String(location.search))
             url = url.slice(1,url.length)
+
+            if(url == ""){
+              url = "img/noimage.png"
+            }else{
+              url = url
+            }
             // alert(url)
             kkk.innerHTML = '<img src="'+url+'" class="img-fluid" alt="Responsive image">'
             kkk.innerHTML += '<h4>'+url+'</h4>'

@@ -135,3 +135,67 @@ STORE.set_time("11:00 ~ 22:00")
 
     STORE.set_category(CATEGORY);
 ALL.push(STORE);
+
+STORE = new store("돼지잡는 농부");
+STORE.set_tel("041-548-9293")
+STORE.set_map('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1955.2442673880516!2d127.06923302617345!3d36.801655222925184!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5eb64ca4461e7296!2z64-87KeA7J6h64qU64aN67aA!5e0!3m2!1sko!2skr!4v1542007075746')
+STORE.set_map_text("아산시 탕정면 탕정면 갈산리 81-11번지 1층 상가갈산칼국수 아산시 충청남도 KR")
+STORE.set_delevery_cost_TF(false)
+STORE.set_delevery_cost(0);
+STORE.set_tossTF(false);
+STORE.set_time("10:30 ~ 20:00")
+    CATEGORY = new category("1인 메뉴");
+        CATEGORY.set_menu(new menu("고구마돈가스",6000,""))
+        CATEGORY.set_menu(new menu("치즈돈가스",6000,""))
+        CATEGORY.set_menu(new menu("등심돈가스",5500,""))
+        CATEGORY.set_menu(new menu("오징어두루치기",5500,""))
+        CATEGORY.set_menu(new menu("오징어",5500,""))
+        CATEGORY.set_menu(new menu("고추장 두루치기",5500,""))
+        CATEGORY.set_menu(new menu("간장두루치기",5500,""))
+        CATEGORY.set_menu(new menu("불타는 제육",5500,""))
+        CATEGORY.set_menu(new menu("비빔제육",5000,""))
+
+    STORE.set_category(CATEGORY);
+
+    CATEGORY = new category("2인 세트");
+        CATEGORY.set_menu(new menu("직접구운 삼겹살 2인",14000,""))
+        CATEGORY.set_menu(new menu("직접구운 얼큰이삼겹살 2인",15000,""))
+        CATEGORY.set_menu(new menu("직접구운 돼지갈비 2인",6000,""))
+    STORE.set_category(CATEGORY);
+
+    CATEGORY = new category("추가메뉴");
+        CATEGORY.set_menu(new menu("공기밥 추가",1000,""))
+        CATEGORY.set_menu(new menu("곱배기(삼겹살/돼지갈비 제외)",1000,""))
+    STORE.set_category(CATEGORY);
+ALL.push(STORE);
+
+
+
+STORE = new store("도스마스");
+STORE.set_tel("041-544-8099")
+STORE.set_map('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12778.710054972942!2d127.0681922!3d36.8022817!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x245658b6c00b73cf!2z64-E7Iqk66eI7Iqk7ISg66y464yA7KCQ!5e0!3m2!1sko!2skr!4v1542074937763')
+STORE.set_map_text("충청남도 아산시 탕정면 갈산리 47-5")
+STORE.set_delevery_cost_TF(false)
+STORE.set_delevery_cost(0);
+STORE.set_tossTF(true);
+STORE.set_time("??? ~ ???")
+    CATEGORY = new category("브리또 (안 매운맛/조금 매운맛/아주 매운맛)");
+        CATEGORY.set_menu(new menu("Chicken 브리또",3500,"img/도스마스브리또.png"))
+        CATEGORY.set_menu(new menu("Beef 브리또",4000,"img/도스마스브리또.png"))
+        CATEGORY.set_menu(new menu("Mixed 브리또",3500,"img/도스마스브리또.png"))
+    STORE.set_category(CATEGORY);
+
+    CATEGORY = new category("세트메뉴");
+        CATEGORY.set_menu(new menu("브리또 + 소다(Beef 브리또는 500원 추가)",4200,"img/도스마스브리또음료.png"))
+        CATEGORY.set_menu(new menu("브리또 + 소다 + 프렌치프라이 칩스(Beef 브리또는 500원 추가)",6000,"img/도스마스브리또음료칩스.png"))
+    STORE.set_category(CATEGORY);
+
+    CATEGORY = new category("추가메뉴");
+        CATEGORY.set_menu(new menu("점보 사이즈",1000,""))
+        CATEGORY.set_menu(new menu("웨지감자",500,""))
+        CATEGORY.set_menu(new menu("더블치즈",500,""))
+        CATEGORY.set_menu(new menu("모짜렐라 치즈",1000,""))
+        CATEGORY.set_menu(new menu("할라피뇨",500,""))
+        CATEGORY.set_menu(new menu("콩",500,""))
+    STORE.set_category(CATEGORY);
+ALL.push(STORE);
